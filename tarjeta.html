@@ -378,7 +378,7 @@ document.addEventListener('touchstart',()=>{ if(!audioStarted) autoStartAll(); }
 
 // ── CONFIRMACIÓN GOOGLE SHEETS ────────────────────────────
 // Cuando estés listo, reemplaza esta URL con la de tu Google Apps Script
-const SCRIPT_URL='TU_APPS_SCRIPT_URL';
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbwlNz2w48ucuUvVjqJ0hEN8x9CHi1pSdWssaxr5O_ypAMJRMMKA1GuzPQpOvLtrO6Y5/exec';
 
 async function confirmar(){
   const nombre=document.getElementById('iNombre').value.trim();
@@ -386,7 +386,7 @@ async function confirmar(){
   if(!nombre){st.textContent='⚠ Por favor escribe tu nombre';st.className='cst err';return;}
   btn.disabled=true;btn.textContent='⏳ Confirmando...';st.textContent='';st.className='cst';
   const ts=new Date().toLocaleString('es-PA',{timeZone:'America/Panama'});
-  if(SCRIPT_URL==='TU_APPS_SCRIPT_URL'){
+  if(false){ // demo mode desactivado - usando Google Sheets real
     setTimeout(()=>{
       st.innerHTML=`🏁 <strong style="color:#7FD84A">¡${nombre}, tu puesto está reservado!</strong><br><span style="font-size:10px;opacity:.7">Nos vemos en la pista el 6 de junio 🏎️</span>`;
       st.className='cst ok';btn.textContent='✅ ¡CONFIRMADO!';
